@@ -558,6 +558,7 @@ section {
 
 .signature-theme-strip {
   display: flex;
+  justify-content: center;
   gap: 14px;
   overflow-x: auto;
   padding: 6px 4px 14px;
