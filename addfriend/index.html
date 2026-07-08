@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add friend on GIVU</title>
+  <meta name="description" content="Open GIVU to add this friend." />
+  <link rel="icon" href="../assets/favicon-2026.png?v=2" type="image/png" />
+  <link rel="apple-touch-icon" href="../assets/favicon-2026.png?v=2" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="app-bg">
+  <div class="grain-overlay"></div>
+  <main class="inner-page" style="display:flex;align-items:center;justify-content:center;min-height:100vh;padding:32px;">
+    <section class="support-card" style="position:relative;z-index:2;max-width:420px;width:100%;text-align:center;padding:32px;">
+      <img src="../assets/GivuApplogo.png" alt="GIVU" style="width:72px;height:72px;border-radius:18px;margin:0 auto 18px;" />
+      <h1 style="font-family:var(--font-mono);font-size:24px;margin-bottom:10px;">Add friend on GIVU</h1>
+      <p style="color:rgba(255,255,255,0.58);font-size:14px;line-height:1.7;margin-bottom:22px;">Open the GIVU app to add this friend.</p>
+      <a id="openApp" class="btn-primary" style="display:inline-flex;" href="givu://addfriend">Open GIVU</a>
+      <p style="color:rgba(255,255,255,0.34);font-size:12px;margin-top:18px;">If nothing happens, install or open GIVU manually.</p>
+    </section>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id') || '';
+    const deepLink = `givu://addfriend?id=${encodeURIComponent(id)}`;
+    const button = document.getElementById('openApp');
+    button.href = deepLink;
+    setTimeout(() => { window.location.href = deepLink; }, 450);
+  </script>
+</body>
+</html>
