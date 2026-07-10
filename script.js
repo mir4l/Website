@@ -1,37 +1,39 @@
-// =============================================
-// GIVU Website — script.js
-// =============================================
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Scroll Reveal ──────────────────────────
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
+  // ---- Scroll Reveal ----
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => revealObserver.observe(el));
 
-  // ── FAQ Accordion ──────────────────────────
-  const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    const btn = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
-    if (!btn || !answer) return;
+  // ---- Nav scroll border ----
+  const nav = document.getElementById('nav');
+  const handleScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 24);
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
 
+  // ---- FAQ Accordion ----
+  document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
       const isOpen = item.classList.contains('open');
+
       // Close all
-      faqItems.forEach(i => {
-        i.classList.remove('open');
-        const a = i.querySelector('.faq-answer');
-        if (a) a.style.maxHeight = '0';
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-answer').style.maxHeight = null;
       });
-      // Open clicked
+
+      // Toggle clicked
       if (!isOpen) {
         item.classList.add('open');
         answer.style.maxHeight = answer.scrollHeight + 'px';
@@ -39,48 +41,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Mobile Nav ─────────────────────────────
-  const hamburger = document.querySelector('.nav-hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('mobile-open');
-    });
-    // Close on link click
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => navLinks.classList.remove('mobile-open'));
-    });
-  }
-
-  // ── Nav scroll background ──────────────────
-  const nav = document.querySelector('nav');
-  if (nav) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        nav.style.background = 'rgba(10,10,10,0.92)';
-      } else {
-        nav.style.background = 'rgba(10,10,10,0.6)';
-      }
-    }, { passive: true });
-  }
-
-  // ── Receipt card subtle float ──────────────
-  const receiptCards = document.querySelectorAll('.receipt-card');
-  receiptCards.forEach((card, i) => {
-    const delay = i * 0.4;
-    const duration = 3 + i * 0.5;
-    const amplitude = 6 + i * 2;
-    let start = null;
-
-    function animate(ts) {
-      if (!start) start = ts;
-      const elapsed = (ts - start) / 1000;
-      const y = Math.sin((elapsed + delay) * (2 * Math.PI / duration)) * amplitude;
-      const baseRotate = card.classList.contains('rotated-left') ? -1.5 : card.classList.contains('rotated-right') ? 1 : 0;
-      card.style.transform = `translateY(${y}px) rotate(${baseRotate}deg)`;
-      requestAnimationFrame(animate);
-    }
-    requestAnimationFrame(animate);
+  // ---- Mobile Nav ----
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger?.addEventListener('click', () => {
+    navLinks.classList.toggle('mobile-open');
   });
+  navLinks?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('mobile-open'));
+  });
+
+  // ---- Hero Slideshow ----
+  const slides = document.querySelectorAll('.slide');
+  if (slides.length > 1) {
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5000);
+  }
+
+  // ---- Themes drag-scroll ----
+  const scroll = document.getElementById('themesScroll');
+  if (scroll) {
+    let isDragging = false;
+    let startX = 0;
+    let startScroll = 0;
+
+    scroll.addEventListener('mousedown', e => {
+      isDragging = true;
+      startX = e.pageX - scroll.offsetLeft;
+      startScroll = scroll.scrollLeft;
+      scroll.style.cursor = 'grabbing';
+    });
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+      scroll.style.cursor = 'grab';
+    });
+    scroll.addEventListener('mouseleave', () => {
+      isDragging = false;
+      scroll.style.cursor = 'grab';
+    });
+    scroll.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - scroll.offsetLeft;
+      scroll.scrollLeft = startScroll - (x - startX) * 1.3;
+    });
+  }
 
 });
