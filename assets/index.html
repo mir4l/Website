@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GIVU — Track Debts With Friends</title>
+  <meta name="description" content="GIVU is the social, no-drama way to track who owes who. Split bills, log debts, and settle up — all in your pocket." />
+  <meta property="og:title" content="GIVU — Track Debts With Friends" />
+  <meta property="og:description" content="No more 'who owes who?' — track debts with friends the social way." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://givu.top" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,600;1,9..144,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =================== NAV =================== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="assets/GivuApplogo.png" alt="GIVU icon" class="nav-icon" />
+        <span class="nav-wordmark">GIVU</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+      <a href="#download" class="btn btn-primary nav-cta">Download</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- =================== HERO =================== -->
+  <section class="hero" id="home">
+    <div class="hero-inner container">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Coming to App Store
+        </div>
+        <h1 class="hero-title">
+          Track debts.<br />
+          <em>With your people.</em>
+        </h1>
+        <p class="hero-subtitle">
+          GIVU turns who-owes-who into a simple, beautiful receipt. No banks. No drama. Just you and your friends.
+        </p>
+        <div class="hero-actions">
+          <a href="#download" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download on App Store
+          </a>
+          <a href="#how-it-works" class="btn btn-ghost">See how it works ↓</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value">9+</span>
+            <span class="stat-label">Currencies</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-value">QR</span>
+            <span class="stat-label">Instant Confirm</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-value">0</span>
+            <span class="stat-label">Banks Involved</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="phone-wrap">
+          <div class="phone-frame">
+            <div class="slideshow">
+              <img src="assets/slide1.png" alt="GIVU App Screen" class="phone-screen slide active" />
+              <img src="assets/slide2.png" alt="GIVU App Screen" class="phone-screen slide" />
+              <img src="assets/slide3.png" alt="GIVU App Screen" class="phone-screen slide" />
+              <img src="assets/slide4.png" alt="GIVU App Screen" class="phone-screen slide" />
+              <img src="assets/slide5.png" alt="GIVU App Screen" class="phone-screen slide" />
+              <img src="assets/slide6.png" alt="GIVU App Screen" class="phone-screen slide" />
+            </div>
+          </div>
+          <div class="receipt-chip receipt-chip--a">
+            <div class="chip-label">Alex owes you</div>
+            <div class="chip-amount chip-amount--green">+¥3,200</div>
+            <div class="chip-note">Dinner at Izakaya</div>
+          </div>
+          <div class="receipt-chip receipt-chip--b">
+            <div class="chip-label">You owe Mika</div>
+            <div class="chip-amount chip-amount--red">-€24</div>
+            <div class="chip-note">Coffee & cake</div>
+          </div>
+          <div class="phone-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== FEATURES =================== -->
+  <section class="features section" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Features</span>
+        <h2 class="section-title">Everything you need.</h2>
+        <p class="section-subtitle">Built for real friendships — not spreadsheets.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrap" style="--c: #461248; --bg: #f3eaf3;">🧾</div>
+          <div class="feature-text">
+            <h3>Receipt Aesthetic</h3>
+            <p>Every friendship gets its own thermal-paper receipt ledger. Scroll through your shared history like a conversation — personal, clear, beautiful.</p>
+          </div>
+        </div>
+
+        <div class="feature-card reveal delay-1">
+          <div class="feature-icon-wrap" style="--c: #a93747; --bg: #fdf0f0;">⚡️</div>
+          <div class="feature-text">
+            <h3>QR Instant Confirm</h3>
+            <p>Generate a QR, your friend scans it, and the debt is confirmed on the spot. No back-and-forth.</p>
+          </div>
+        </div>
+
+        <div class="feature-card reveal delay-2">
+          <div class="feature-icon-wrap" style="--c: #c17a30; --bg: #fdf5ec;">💱</div>
+          <div class="feature-text">
+            <h3>Multi-Currency</h3>
+            <p>JPY, EUR, USD, GBP, CHF and more. Mixed currencies auto-convert so totals always make sense.</p>
+          </div>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrap" style="--c: #8b6e4e; --bg: #fdf7f0;">🎨</div>
+          <div class="feature-text">
+            <h3>Receipt Themes</h3>
+            <p>Start free with Paper, White, and Glass. Unlock Signature themes — Linen, Noir, Mulberry, Terracotta.</p>
+          </div>
+        </div>
+
+        <div class="feature-card reveal delay-1">
+          <div class="feature-icon-wrap" style="--c: #461248; --bg: #f3eaf3;">🔔</div>
+          <div class="feature-text">
+            <h3>Activity Feed</h3>
+            <p>In-app notifications keep you in the loop whenever a debt is added, confirmed, or settled.</p>
+          </div>
+        </div>
+
+        <div class="feature-card reveal delay-2">
+          <div class="feature-icon-wrap" style="--c: #a93747; --bg: #fdf0f0;">🔒</div>
+          <div class="feature-text">
+            <h3>Secure & Private</h3>
+            <p>Firebase Auth + Firestore security rules. No ads, no data selling. Your debts are yours.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== THEMES =================== -->
+  <section class="themes section" id="themes">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Signature Themes</span>
+        <h2 class="section-title">Make it yours.</h2>
+        <p class="section-subtitle">Premium receipt themes that turn your debt log into a work of art.</p>
+      </div>
+    </div>
+    <div class="themes-scroll reveal" id="themesScroll">
+      <div class="themes-track">
+        <div class="theme-card theme-card--wide">
+          <img src="assets/signature-styles.png" alt="All Signature Styles" />
+          <div class="theme-label">All Styles</div>
+        </div>
+        <div class="theme-card">
+          <img src="assets/signature-linen.png" alt="Linen theme" />
+          <div class="theme-label">Linen</div>
+        </div>
+        <div class="theme-card">
+          <img src="assets/signature-noir.png" alt="Noir theme" />
+          <div class="theme-label">Noir</div>
+        </div>
+        <div class="theme-card">
+          <img src="assets/signature-light.png" alt="Light Mode" />
+          <div class="theme-label">Light Mode</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== HOW IT WORKS =================== -->
+  <section class="how section" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">How it works</span>
+        <h2 class="section-title">Four steps to zero drama.</h2>
+        <p class="section-subtitle">From sign-up to settled-up in minutes.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h3>Create your account</h3>
+            <p>Sign up with a username and password, or tap Sign in with Google for instant one-tap access.</p>
+          </div>
+        </div>
+        <div class="step-card reveal delay-1">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h3>Add a friend</h3>
+            <p>Share your QR code or your unique friend link. When they scan it, you're instantly connected.</p>
+          </div>
+        </div>
+        <div class="step-card reveal delay-2">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h3>Log a debt</h3>
+            <p>Enter the amount, pick who owes who, add a note. Send for confirmation or use Quick QR to log it instantly.</p>
+          </div>
+        </div>
+        <div class="step-card reveal delay-3">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <h3>Stay on top of it</h3>
+            <p>Live balance updates, partial payments, and a clear running receipt per friendship — always in sync.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== SCREENSHOTS =================== -->
+  <section class="screenshots section" id="app">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">The app</span>
+        <h2 class="section-title">Designed to feel good.</h2>
+        <p class="section-subtitle">Dark, colorful, premium. The kind of app you actually want to open.</p>
+      </div>
+      <div class="screenshots-row reveal">
+        <div class="ss-phone ss-phone--side">
+          <img src="assets/screen2.png" alt="GIVU Receipt View" />
+        </div>
+        <div class="ss-phone ss-phone--center">
+          <img src="assets/screen1.png" alt="GIVU Home Screen" />
+        </div>
+        <div class="ss-phone ss-phone--side">
+          <img src="assets/screen3.png" alt="GIVU Create Debt" />
+        </div>
+      </div>
+      <p class="screenshots-caption reveal">iOS Light Mode is also supported.</p>
+    </div>
+  </section>
+
+  <!-- =================== LANGUAGES =================== -->
+  <section class="languages section" id="languages">
+    <div class="container">
+      <div class="languages-card reveal">
+        <div class="languages-text">
+          <span class="section-tag">Languages</span>
+          <h2 class="section-title">Feels native,<br />wherever you are.</h2>
+          <p class="section-subtitle">GIVU speaks your language — with more on the way.</p>
+        </div>
+        <div class="lang-pills">
+          <div class="lang-pill">🇬🇧 English</div>
+          <div class="lang-pill">🇩🇪 German</div>
+          <div class="lang-pill">🇯🇵 Japanese</div>
+          <div class="lang-pill">🇪🇸 Spanish</div>
+          <div class="lang-pill">🇮🇹 Italian</div>
+          <a href="support.html" class="lang-pill lang-pill--request">+ Request other</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== FAQ =================== -->
+  <section class="faq section" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Good questions.</h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item reveal">
+          <button class="faq-question">Is GIVU free? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Yes — the core app is completely free. Free themes include Paper and White. Glass unlocks automatically when you reach 10 friends. Signature themes (Linen, Noir, Mulberry, Terracotta) are optional one-time purchases.</p></div>
+        </div>
+
+        <div class="faq-item reveal delay-1">
+          <button class="faq-question">Does GIVU move money? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>No. GIVU is a tracker, not a payment app. You settle up however works for you — cash, bank transfer, a round of drinks. We just keep the score.</p></div>
+        </div>
+
+        <div class="faq-item reveal delay-2">
+          <button class="faq-question">What currencies are supported? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>JPY, EUR, USD, GBP, CHF, NZD, AUD, CNY, and TRY — 9 currencies total, with more on the way.</p></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question">What is QR debt logging? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Tap "via QR" in the log screen, enter the amount, and your friend scans your QR code. The debt is confirmed instantly — no waiting for the other person to approve it separately.</p></div>
+        </div>
+
+        <div class="faq-item reveal delay-1">
+          <button class="faq-question">Is my data private? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Yes. GIVU uses Firebase Auth and Firestore with strict security rules. Only you and your confirmed friends can see your debts. No ads, no data selling — ever.</p></div>
+        </div>
+
+        <div class="faq-item reveal delay-2">
+          <button class="faq-question">What platforms does GIVU support? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>iOS only, coming soon to the App Store. Android support is on the roadmap.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== CTA =================== -->
+  <section class="cta-section" id="download">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <span class="cta-eyebrow">Ready?</span>
+        <h2 class="cta-title">No banks. No stress.<br /><em>Just vibes.</em></h2>
+        <p class="cta-sub">Track debts with your friends the way it should feel.</p>
+        <a href="#" class="btn btn-white">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download GIVU
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">
+            <img src="assets/GivuApplogo.png" alt="GIVU" />
+            <span>GIVU</span>
+          </a>
+          <p>Track debts with friends.<br />No banks. No stress. Just vibes.</p>
+          <p class="footer-byline">Made with ♥ by Massi</p>
+        </div>
+        <div class="footer-col">
+          <h4>App</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#download">Download</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="mailto:support@givu.top">Contact</a></li>
+            <li><a href="support.html#troubleshooting">Troubleshooting</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Massimiliano Milazzo. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
